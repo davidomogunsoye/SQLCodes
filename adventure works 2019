@@ -1,3 +1,5 @@
+--Retrieve all rows and columns from the employee table in the Adventureworks database. Sort the result set in ascending order on jobtitle.
+
 SELECT *
   FROM [AdventureWorks2019].[HumanResources].[Employee] a
   order by a.[JobTitle] desc;
