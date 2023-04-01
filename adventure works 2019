@@ -3,3 +3,21 @@
 SELECT *
   FROM [AdventureWorks2019].[HumanResources].[Employee] a
   order by a.[JobTitle] desc;
+
+/* return all rows and a subset of the columns (FirstName, LastName, businessentityid) 
+from the person table in the AdventureWorks database. rename the third column to Employee_id. 
+Arranged the output in ascending order by lastname. */
+
+select p.[FirstName], p.[LastName], p.[BusinessEntityID] employee_id
+from [AdventureWorks2019].[person].[person] p
+order by p.LastName asc;
+
+/* return only the rows for product that have a sellstartdate that is not NULL and a productline of 'T'. 
+Return productid, productnumber, and name. Arranged the output in ascending order on name */
+
+SELECT a.ProductID, a.ProductNumber, a.Name
+  FROM [AdventureWorks2019].[Production].[Product] a
+  where a.SellStartDate is not null 
+  and 
+  a.ProductLine = 'T'
+  order by name;
