@@ -1,4 +1,38 @@
---Retrieve all rows and columns from the employee table in the Adventureworks database. Sort the result set in ascending order on jobtitle.
+/* (8) find the average and the sum of the subtotal for every customer. 
+Return customerid, average and sum of the subtotal. 
+Grouped the result on customerid and salespersonid. 
+Sort the result on customerid column in descending order. */
+
+select s.CustomerID, s.SalesPersonID, avg(s.SubTotal) avg, sum(s.subTotal) sum
+from [AdventureWorks2019].Sales.SalesOrderHeader s
+group by s.CustomerID, S.SalesPersonID
+order by s.CustomerID desc;
+
+/* (7) calculate the total freight paid by each customer. 
+Return customerid and total freight. Sort the output in ascending order on customerid. */
+
+select s.CustomerID, SUM(s.Freight) total_freight
+from [AdventureWorks2019].Sales.SalesOrderHeader s
+group by s.CustomerID
+order by s.CustomerID;
+
+/* (6) create a list of unique jobtitles in the employee table in Adventureworks database. 
+Return jobtitle column and arranged the resultset in ascending order. */
+
+select distinct e.JobTitle
+from [AdventureWorks2019].HumanResources.Employee e
+order by e.JobTitle; 
+
+  /* (5) return all rows from the salesorderheader table in Adventureworks database 
+and calculate the percentage of tax on the subtotal have decided. 
+Return salesorderid, customerid, orderdate, subtotal, percentage of tax column. 
+Arranged the result set in descending order on subtotal. */
+
+select s.SalesOrderID, s.CustomerID, s.OrderDate, s.SubTotal, ((s.TaxAmt / s.SubTotal) * 100) percent_tax
+from [AdventureWorks2019].Sales.SalesOrderHeader s
+order by s.SubTotal desc;
+
+-- (1) Retrieve all rows and columns from the employee table in the Adventureworks database. Sort the result set in ascending order on jobtitle.
 
 SELECT *
   FROM [AdventureWorks2019].[HumanResources].[Employee] a
@@ -34,3 +68,6 @@ SELECT distinct a.Color, sum(a.ListPrice) total_list_price, sum(a.standardCost) 
   a.ListPrice > 0
   Group by a.color
   order by a.Color;
+  
+  
+
