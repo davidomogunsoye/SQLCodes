@@ -21,3 +21,16 @@ SELECT a.ProductID, a.ProductNumber, a.Name
   and 
   a.ProductLine = 'T'
   order by name;
+
+
+/* return the total ListPrice and StandardCost of products for each color. 
+Products that name starts with 'Mountain' and ListPrice is more than zero. Return Color, total list price, total standardcode. 
+Sort the result set on color in ascending order. */
+
+SELECT distinct a.Color, sum(a.ListPrice) total_list_price, sum(a.standardCost) total_standard_cost
+  FROM [AdventureWorks2019].[Production].[Product] a
+  where a.name like 'Mountain%' 
+  and 
+  a.ListPrice > 0
+  Group by a.color
+  order by a.Color;
