@@ -1,3 +1,9 @@
+/* (10) find the total quantity for a group of locationid multiplied by 10. */
+
+select Sum(p.Quantity) sum
+from [AdventureWorks2019].[Production].[ProductInventory] p
+Group by (p.LocationID*10)
+
 /*(9) retrieve total quantity of each productid which are in shelf of 'A' or 'C' or 'H'. 
 Filter the results for sum quantity is more than 500. Return productid and sum of the quantity. 
 Sort the results according to the productid in ascending order. */
