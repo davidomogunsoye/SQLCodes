@@ -1,3 +1,29 @@
+/*(9) retrieve total quantity of each productid which are in shelf of 'A' or 'C' or 'H'. 
+Filter the results for sum quantity is more than 500. Return productid and sum of the quantity. 
+Sort the results according to the productid in ascending order. */
+
+With Sum_Qty as (
+	select p.ProductID ID, p.Shelf, sum(p.quantity) sum
+	from [AdventureWorks2019].[Production].[ProductInventory] p
+	where p.Shelf in ('A','C','H')
+	group by p.ProductID, p.Shelf
+	)
+
+select ID, Sum
+from Sum_Qty
+where sum > 500
+order by ID
+
+-- or 
+
+select p.ProductID ID, sum(p.quantity) sum
+from [AdventureWorks2019].[Production].[ProductInventory] p
+where p.Shelf in ('A','C','H')
+group by p.ProductID, p.Shelf
+Having sum(p.quantity)>500
+order by p.ProductID
+
+
 /* (8) find the average and the sum of the subtotal for every customer. 
 Return customerid, average and sum of the subtotal. 
 Grouped the result on customerid and salespersonid. 
