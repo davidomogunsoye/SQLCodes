@@ -1,3 +1,13 @@
+/* (11) write a query in SQL to find the persons whose last name starts with letter 'L'. 
+Return BusinessEntityID, FirstName, LastName, and PhoneNumber. Sort the result on lastname and firstname. */
+
+select p.BusinessEntityID, PP.FirstName, PP.LastName, P.PhoneNumber
+from [AdventureWorks2019].[Person].[PersonPhone] p
+join [AdventureWorks2019].Person.Person pp
+on pp.BusinessEntityID = P.BusinessEntityID
+Where pp.LastName like 'L%'
+Order by pp.LastName, pp.FirstName;
+
 /* (10) find the total quantity for a group of locationid multiplied by 10. */
 
 select Sum(p.Quantity) sum
