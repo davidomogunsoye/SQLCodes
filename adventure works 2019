@@ -1,3 +1,13 @@
+/* (12) write a query in SQL to find the sum of subtotal column. Group the sum on distinct salespersonid and customerid. 
+Roll up the results into subtotal and running total. Return salespersonid, customerid and sum of subtotal column i.e. sum_subtotal. */
+
+ select s.SalesPersonID, CustomerID, SUM(SubTotal) sum
+ from [AdventureWorks2019].[Sales].[SalesOrderHeader] s
+ group by rollup(s.SalesPersonID, CustomerID)
+
+ --rollup creates a running total for each level of grouping.
+
+
 /* (11) write a query in SQL to find the persons whose last name starts with letter 'L'. 
 Return BusinessEntityID, FirstName, LastName, and PhoneNumber. Sort the result on lastname and firstname. */
 
