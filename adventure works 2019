@@ -1,3 +1,13 @@
+/* (14) write a query in SQL to find the sum of the quantity with subtotal for each locationid. 
+Group the results for all combination of distinct locationid and shelf column. 
+Rolls up the results into subtotal and running total. Return locationid, shelf and sum of quantity as TotalQuantity. */
+
+select LocationID, Shelf, sum(Quantity) TotalQuantity
+from [AdventureWorks2019].[Production].[ProductInventory]
+group by Grouping sets (rollup (LocationID, Shelf), cube(LocationID, Shelf));
+
+-- Read up on grouping sets here https://www.sqlservertutorial.net/sql-server-basics/sql-server-grouping-sets/
+
 /* (13) write a query in SQL to find the sum of the quantity of all combination of group of distinct locationid and shelf column. 
 Return locationid, shelf and sum of quantity as TotalQuantity. */
 
