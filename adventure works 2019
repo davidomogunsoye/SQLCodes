@@ -1,3 +1,13 @@
+/* (16) write a query in SQL to retrieve the number of employees for each City. 
+Return city and number of employees. Sort the result in ascending order on city. */
+
+select distinct A.CITY,count(distinct e.BusinessEntityID) num_of_emp
+from [AdventureWorks2019].[Person].[BusinessEntityAddress] E
+Join [AdventureWorks2019].[Person].[Address] A
+on e.AddressID = a.AddressID
+group by a.City
+order by a.City
+
 /* (15) write a query in SQL to find the total quantity for each locationid and calculate the grand-total for all locations. 
 Return locationid and total quantity. Group the results on locationid. */
 
