@@ -1,3 +1,10 @@
+/* (15) write a query in SQL to find the total quantity for each locationid and calculate the grand-total for all locations. 
+Return locationid and total quantity. Group the results on locationid. */
+
+select LocationID, sum(Quantity) TotalQuantity
+from [AdventureWorks2019].[Production].[ProductInventory]
+group by rollup(LocationID)
+
 /* (14) write a query in SQL to find the sum of the quantity with subtotal for each locationid. 
 Group the results for all combination of distinct locationid and shelf column. 
 Rolls up the results into subtotal and running total. Return locationid, shelf and sum of quantity as TotalQuantity. */
