@@ -1,3 +1,11 @@
+/* (19) write a query in SQL to find the contacts who are designated as a manager in various departments. 
+Returns ContactTypeID, name. Sort the result set in descending order. */
+
+select c.ContactTypeID, c.Name
+from [AdventureWorks2019].[Person].[ContactType] c
+where c.name like '%manager%'
+order by c.name desc;
+
 /* (18) write a query in SQL to retrieve the total sales for each year. 
 Filter the result set for those orders where order year is on or before 2016. 
 Return the year part of orderdate and total due amount. 
