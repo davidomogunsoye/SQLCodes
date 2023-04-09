@@ -1,3 +1,14 @@
+/* (18) write a query in SQL to retrieve the total sales for each year. 
+Filter the result set for those orders where order year is on or before 2016. 
+Return the year part of orderdate and total due amount. 
+Sort the result in ascending order on year part of order date. */
+
+select Year(s.OrderDate) year, sum(s.TotalDue) total_due_amount
+from [AdventureWorks2019].[Sales].[SalesOrderHeader] s
+where Year(s.OrderDate) <= 2016
+group by Year(s.OrderDate) 
+order by Year(s.OrderDate) ;
+
 /* (17) write a query in SQL to retrieve the total sales for each year. 
 Return the year part of order date and total due amount. 
 Sort the result in ascending order on year part of order date. */
