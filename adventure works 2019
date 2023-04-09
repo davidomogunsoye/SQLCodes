@@ -1,3 +1,15 @@
+/* (20) write a query in SQL to make a list of contacts who are designated as 'Purchasing Manager'. 
+Return BusinessEntityID, LastName, and FirstName columns. Sort the result set in ascending order of LastName, and FirstName */
+
+select p.BusinessEntityID, p.LastName, p.FirstName
+from  [AdventureWorks2019].Person.BusinessEntityContact e
+inner join  [AdventureWorks2019].Person.ContactType c
+on  c.ContactTypeID = e.ContactTypeID
+inner Join [AdventureWorks2019].Person.Person p
+on e.BusinessEntityID = p.BusinessEntityID
+where c.name = 'Purchasing Manager'
+order by p.LastName, p.FirstName;  
+
 /* (19) write a query in SQL to find the contacts who are designated as a manager in various departments. 
 Returns ContactTypeID, name. Sort the result set in descending order. */
 
