@@ -1,3 +1,13 @@
+/* (23) write a query in SQL to retrieve the RateChangeDate, full name (first name, middle name and last name) and weekly salary 
+(40 hours in a week) of employees. In the output the RateChangeDate should appears in date format. 
+Sort the output in ascending order on NameInFull. */
+
+Select CAST(RateChangeDate AS DATE) rateChangeDate, CONCAT(FirstName, ' ',MiddleName, ' ', LastName) FULLNAME, (Rate * 40) weeklySalary
+from [AdventureWorks2019].HumanResources.EmployeePayHistory E
+Inner Join [AdventureWorks2019].Person.Person p
+	on E.BusinessEntityID = P.BusinessEntityID
+order by FULLNAME;
+
 /* (22) write a query in SQL to count the number of contacts for combination of each type and name. 
 Filter the output for those who have 100 or more contacts. Return ContactTypeID and ContactTypeName and BusinessEntityContact. 
 Sort the result set in descending order on number of contacts. */
