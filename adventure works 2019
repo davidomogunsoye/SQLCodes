@@ -1,3 +1,20 @@
+/* (24) write a query in SQL to calculate and display the latest weekly salary of each employee. 
+Return RateChangeDate, full name (first name, middle name and last name) and weekly salary (40 hours in a week) of employees 
+Sort the output in ascending order on NameInFull. */
+
+With latest_weekly_salary as 
+
+	(Select CAST(RateChangeDate AS DATE) rateChangeDate, CONCAT(FirstName, ' ',MiddleName, ' ', LastName) FULLNAME, (Rate * 40) weeklySalary, 
+	ROW_NUMBER() over( partition by CONCAT(FirstName, ' ',MiddleName, ' ', LastName) order by CAST(RateChangeDate AS DATE) desc) rownum
+	from [AdventureWorks2019].HumanResources.EmployeePayHistory E
+	Inner Join [AdventureWorks2019].Person.Person p
+		on E.BusinessEntityID = P.BusinessEntityID)
+		
+select rateChangeDate,FULLNAME,weeklySalary
+from latest_weekly_salary
+where rownum = 1
+order by FULLNAME;
+
 /* (23) write a query in SQL to retrieve the RateChangeDate, full name (first name, middle name and last name) and weekly salary 
 (40 hours in a week) of employees. In the output the RateChangeDate should appears in date format. 
 Sort the output in ascending order on NameInFull. */
