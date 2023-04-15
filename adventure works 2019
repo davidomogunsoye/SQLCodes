@@ -1,3 +1,15 @@
+/* (25) write a query in SQL to find the sum, average, count, minimum, and maximum order quentity for those orders whose id are 43659 and 43664. 
+Return SalesOrderID, ProductID, OrderQty, sum, average, count, max, and min order quantity. */
+
+select SalesOrderID, ProductID, OrderQty,
+sum(OrderQty) OVER(PARTITION BY salesOrderID) sum, 
+AVG(OrderQty) OVER(PARTITION BY salesOrderID) avg, 
+COUNT(OrderQty) OVER(PARTITION BY salesOrderID) count, 
+min(OrderQty) OVER(PARTITION BY salesOrderID) min, 
+max(OrderQty) OVER(PARTITION BY salesOrderID) max
+from [AdventureWorks2019].Sales.SalesOrderDetail
+where SalesOrderID in (43659,43664);
+
 /* (24) write a query in SQL to calculate and display the latest weekly salary of each employee. 
 Return RateChangeDate, full name (first name, middle name and last name) and weekly salary (40 hours in a week) of employees 
 Sort the output in ascending order on NameInFull. */
