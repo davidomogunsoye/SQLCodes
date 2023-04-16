@@ -1,3 +1,13 @@
+/* (26) write a query in SQL to find the sum, average, and number of order quantity for those orders whose ids are 43659 and 43664 and 
+product id starting with '71'. Return SalesOrderID, OrderNumber,ProductID, OrderQty, sum, average, and number of order quantity */
+
+select SalesOrderID,ProductID, OrderQty,
+sum(OrderQty) OVER(PARTITION BY salesOrderID) sum, 
+AVG(OrderQty) OVER(PARTITION BY salesOrderID) avg, 
+COUNT(OrderQty) OVER(PARTITION BY salesOrderID) count
+from [AdventureWorks2019].Sales.SalesOrderDetail
+where SalesOrderID in (43659,43664) and ProductID like '71%';
+
 /* (25) write a query in SQL to find the sum, average, count, minimum, and maximum order quentity for those orders whose id are 43659 and 43664. 
 Return SalesOrderID, ProductID, OrderQty, sum, average, count, max, and min order quantity. */
 
