@@ -1,3 +1,11 @@
+/* (28) write a query in SQL to retrieve products whose names start with 'Lock Washer'. 
+Return product ID, and name and order the result set in ascending order on product ID column */
+
+Select ProductID, Name
+from [AdventureWorks2019].Production.Product
+WHERE Name LIKE 'Lock Washer%'
+order by ProductID;
+
 /*(27) write a query in SQL to retrieve the total cost of each salesorderID that exceeds 100000. Return SalesOrderID, total cost. */
 
 Select SalesOrderID, Sum(OrderQty*UnitPrice) Total_Cost
