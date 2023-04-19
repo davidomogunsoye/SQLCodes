@@ -1,3 +1,10 @@
+/*(29) fetch rows from product table and order the result set on column listprice. 
+Return product ID, name, and color of the product. */
+
+select ProductID, name, color
+from [AdventureWorks2019].[Production].[Product]
+order by ListPrice;
+
 /* (28) write a query in SQL to retrieve products whose names start with 'Lock Washer'. 
 Return product ID, and name and order the result set in ascending order on product ID column */
 
