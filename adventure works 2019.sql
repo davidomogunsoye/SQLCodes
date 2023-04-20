@@ -1,3 +1,10 @@
+/* (30) write a query in SQL to retrieve records of employees. Order the output on year (default ascending order) of hiredate. 
+Return BusinessEntityID, JobTitle, and HireDate. */
+
+Select BusinessEntityID, JobTitle, HireDate
+from [AdventureWorks2019].HumanResources.Employee
+order by HireDate;
+
 /*(29) fetch rows from product table and order the result set on column listprice. 
 Return product ID, name, and color of the product. */
 
