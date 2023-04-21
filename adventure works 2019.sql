@@ -1,3 +1,11 @@
+/* (31) write a query in SQL to retrieve those persons whose last name begins with letter 'R'. 
+Return lastname, and firstname and display the result in ascending order on firstname and descending order on lastname columns. */
+
+select LastName, FirstName
+from [AdventureWorks2019].Person.Person a
+where LastName like 'R%'
+Order by FirstName, LastName desc;
+
 /* (30) write a query in SQL to retrieve records of employees. Order the output on year (default ascending order) of hiredate. 
 Return BusinessEntityID, JobTitle, and HireDate. */
 
