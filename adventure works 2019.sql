@@ -1,3 +1,12 @@
+/* (32) write a query in SQL to ordered the BusinessEntityID column descendingly when SalariedFlag set to 'true' and 
+BusinessEntityID in ascending order when SalariedFlag set to 'false'. Return BusinessEntityID, SalariedFlag columns. */
+
+select BusinessEntityID, SalariedFlag
+from AdventureWorks2019.HumanResources.Employee
+where SalariedFlag = 'false'
+order by case when SalariedFlag = 'true' then BusinessEntityID end desc,
+			case when SalariedFlag = 'false' then BusinessEntityID end;
+
 /* (31) write a query in SQL to retrieve those persons whose last name begins with letter 'R'. 
 Return lastname, and firstname and display the result in ascending order on firstname and descending order on lastname columns. */
 
