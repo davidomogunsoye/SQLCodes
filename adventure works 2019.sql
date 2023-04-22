@@ -1,3 +1,11 @@
+/* (33) write a query in SQL to set the result in order by the column TerritoryName when the column CountryRegionName is equal to 'United States' 
+and by CountryRegionName for all other rows. Return Business Entity ID, lastname, territoryname, countryregion name */
+
+
+select BusinessEntityID, LastName, TerritoryName, CountryRegionName
+from [AdventureWorks2019].Sales.vSalesPerson
+order by case when CountryRegionName = 'United States' then TerritoryName else CountryRegionName end;
+
 /* (32) write a query in SQL to ordered the BusinessEntityID column descendingly when SalariedFlag set to 'true' and 
 BusinessEntityID in ascending order when SalariedFlag set to 'false'. Return BusinessEntityID, SalariedFlag columns. */
 
