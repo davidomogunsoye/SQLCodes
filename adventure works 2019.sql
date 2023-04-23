@@ -1,3 +1,20 @@
+/* (34) write a query in SQL to find those persons who lives in a territory and the value of salesytd except 0. 
+Return first name, last name,row number as 'Row Number', 'Rank', 'Dense Rank' and NTILE as 'Quartile', salesytd and postalcode. 
+Order the output on postalcode column.*/
+
+select FirstName, LastName, 
+		ROW_NUMBER () OVER(order by PostalCode) rowNum, 
+		RANK() OVER(order by PostalCode) Rank, 
+		DENSE_RANK () OVER(order by PostalCode) DensErANK, 
+		NTILE(4) OVER(order by PostalCode) Quartile,
+		s.SalesYTD, a.PostalCode
+from AdventureWorks2019.Sales.SalesPerson s
+inner Join AdventureWorks2019.Person.Person p
+	on s.BusinessEntityID = p.BusinessEntityID
+Inner Join AdventureWorks2019.Person.Address a
+	On a.AddressID = s.BusinessEntityID
+where TerritoryID is not null and SalesYTD <> 0;
+
 /* (33) write a query in SQL to set the result in order by the column TerritoryName when the column CountryRegionName is equal to 'United States' 
 and by CountryRegionName for all other rows. Return Business Entity ID, lastname, territoryname, countryregion name */
 
