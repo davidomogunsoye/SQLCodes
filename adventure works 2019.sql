@@ -1,3 +1,10 @@
+/* (35) write a query in SQL to return the departmentiD, Name and groupname from the HR Dept table, order by departmentId, 
+skip the first 10 rows from the sorted result set and return all remaining rows */
+
+Select d.departmentID, d.name, d.groupname
+from AdventureWorks2019.HumanResources.Department d
+order by departmentID offset 10 Rows;
+
 /* (34) write a query in SQL to find those persons who lives in a territory and the value of salesytd except 0. 
 Return first name, last name,row number as 'Row Number', 'Rank', 'Dense Rank' and NTILE as 'Quartile', salesytd and postalcode. 
 Order the output on postalcode column.*/
