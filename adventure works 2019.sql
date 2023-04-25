@@ -1,3 +1,14 @@
+/* (36) write a query in SQL to return the departmentiD, Name and groupname from the HR Dept table, order by departmentId,
+skip the first 5 rows and return the next 5 rows from the sorted result set */
+
+Select d.departmentID, d.name, d.groupname
+from AdventureWorks2019.HumanResources.Department d
+order by departmentID 
+	offset 5 Rows
+	Fetch Next 5 Rows Only;
+	
+--Read More about OFFSET FETCH Here: https://www.sqlservertutorial.net/sql-server-basics/sql-server-offset-fetch/
+
 /* (35) write a query in SQL to return the departmentiD, Name and groupname from the HR Dept table, order by departmentId, 
 skip the first 10 rows from the sorted result set and return all remaining rows */
 
