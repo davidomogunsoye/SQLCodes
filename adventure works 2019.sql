@@ -1,3 +1,12 @@
+/* (37) write a query in to list all the products that are Red or Blue in color. 
+Return name, color and listprice.Sorts this result by the column listprice. */
+
+select name, Color, ListPrice
+from [AdventureWorks2019].Production.Product
+where color = 'Blue' 
+or color = 'Red'
+order by ListPrice;
+
 /* (36) write a query in SQL to return the departmentiD, Name and groupname from the HR Dept table, order by departmentId,
 skip the first 5 rows and return the next 5 rows from the sorted result set */
 
