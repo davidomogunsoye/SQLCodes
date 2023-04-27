@@ -1,3 +1,13 @@
+/* (38) Create a SQL query from the SalesOrderDetail table to retrieve the product name and any associated sales orders. 
+Additionally, it returns any sales orders that don't have any items mentioned in the Product table as well as any products 
+that have sales orders other than those that are listed there. Return product name, salesorderid. Sort the result set on product name column. */
+
+Select Name, SalesOrderID
+from AdventureWorks2019.Production.Product p
+full outer join AdventureWorks2019.Sales.SalesOrderDetail s
+on p.ProductID = s.ProductID
+order by Name;
+
 /* (37) write a query in to list all the products that are Red or Blue in color. 
 Return name, color and listprice.Sorts this result by the column listprice. */
 
