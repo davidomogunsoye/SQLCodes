@@ -1,3 +1,12 @@
+/* (39) From the following table write a SQL query to retrieve the product name and salesorderid. 
+Both ordered and unordered products are included in the result set. */
+
+select name, SalesOrderID
+from AdventureWorks2019.Production.Product p
+inner join AdventureWorks2019.Sales.SalesOrderDetail s
+on p.ProductID = s.ProductID
+order by Name;
+
 /* (38) Create a SQL query from the SalesOrderDetail table to retrieve the product name and any associated sales orders. 
 Additionally, it returns any sales orders that don't have any items mentioned in the Product table as well as any products 
 that have sales orders other than those that are listed there. Return product name, salesorderid. Sort the result set on product name column. */
