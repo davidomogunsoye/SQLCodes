@@ -1,3 +1,11 @@
+/* (40) write a SQL query to get all product names and sales order IDs. Order the result set on product name column.*/
+
+select name, SalesOrderID
+from AdventureWorks2019.Production.Product p
+inner join AdventureWorks2019.Sales.SalesOrderDetail s
+on p.ProductID = s.ProductID
+order by Name;
+
 /* (39) From the following table write a SQL query to retrieve the product name and salesorderid. 
 Both ordered and unordered products are included in the result set. */
 
