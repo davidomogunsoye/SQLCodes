@@ -1,3 +1,11 @@
+/* (41) write a SQL query to retrieve the territory name and BusinessEntityID. The result set includes all salespeople, 
+regardless of whether or not they are assigned a territory. */
+
+select t.name, BusinessEntityID
+from AdventureWorks2019.sales.SalesTerritory t
+Right outer join AdventureWorks2019.sales.SalesPerson s
+on t.TerritoryID = s.TerritoryID;
+
 /* (40) write a SQL query to get all product names and sales order IDs. Order the result set on product name column.*/
 
 select name, SalesOrderID
