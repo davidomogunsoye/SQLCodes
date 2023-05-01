@@ -1,3 +1,16 @@
+/* (42) find the employee's full name (firstname and lastname) and city from the following tables. 
+Order the result set on lastname then by firstname. */
+
+select concat(p.FirstName,' ',p.LastName) fullname, City
+from AdventureWorks2019.Person.Person p
+	inner Join AdventureWorks2019.HumanResources.Employee e
+	on p.BusinessEntityID = e.BusinessEntityID 
+	inner join AdventureWorks2019.Person.BusinessEntityAddress b
+	on p.BusinessEntityID = b.BusinessEntityID
+	inner join AdventureWorks2019.Person.Address a
+	on a.AddressID = b.AddressID
+order by LastName, FirstName
+
 /* (41) write a SQL query to retrieve the territory name and BusinessEntityID. The result set includes all salespeople, 
 regardless of whether or not they are assigned a territory. */
 
