@@ -1,3 +1,16 @@
+/* (43) return the businessentityid,firstname and lastname columns of all persons in the person table (derived table) 
+with persontype is 'IN' and the last name is 'Adams'. Sort the result set in ascending order on firstname. 
+A SELECT statement after the FROM clause is a derived table.*/
+
+Select BusinessEntityID, firstname, lastname
+from (
+	Select *
+	from AdventureWorks2019.Person.Person p
+	where p.PersonType = 'IN' 
+	and p.LastName = 'Adams'
+	) as subtable
+order by FirstName
+
 /* (42) find the employee's full name (firstname and lastname) and city from the following tables. 
 Order the result set on lastname then by firstname. */
 
