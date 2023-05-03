@@ -1,3 +1,12 @@
+/* (44) Create a SQL query to retrieve individuals from the following table with a businessentityid inside 1500, 
+a lastname starting with 'Al', and a firstname starting with 'M' */
+
+Select BusinessEntityID, FirstName, LastName
+from AdventureWorks2019.Person.Person
+where BusinessEntityID < 1500
+and LastName like 'Al%' 
+and FirstName like 'M%';
+
 /* (43) return the businessentityid,firstname and lastname columns of all persons in the person table (derived table) 
 with persontype is 'IN' and the last name is 'Adams'. Sort the result set in ascending order on firstname. 
 A SELECT statement after the FROM clause is a derived table.*/
