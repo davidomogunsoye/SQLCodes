@@ -1,3 +1,13 @@
+/* (45) Write a SQL query to find the productid, name, and colour of the items 'Blade', 'Crown Race' and 'AWC Logo Cap' 
+using a derived table with multiple values.  */
+
+sELECT ProductID, Name, color
+FROM (
+select *
+from AdventureWorks2019.Production.Product
+where Name in ('Blade', 'Crown Race' ,'AWC Logo Cap')) as subtable
+
+
 /* (44) Create a SQL query to retrieve individuals from the following table with a businessentityid inside 1500, 
 a lastname starting with 'Al', and a firstname starting with 'M' */
 
