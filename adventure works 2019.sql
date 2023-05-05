@@ -1,3 +1,13 @@
+/* (46) Create a SQL query to display the total number of sales orders each sales representative receives annually. 
+Sort the result set by SalesPersonID and then by the date component of the orderdate in ascending order. 
+Return the year component of the OrderDate, SalesPersonID, and SalesOrderID. */
+
+select SalesPersonID, count(SalesOrderID) totalSales, DATEPART(year,OrderDate) year
+from [AdventureWorks2019].Sales.SalesOrderHeader
+where SalesPersonID is not null
+group by SalesPersonID, DATEPART(year,OrderDate)
+order by SalesPersonID, DATEPART(year,OrderDate);
+
 /* (45) Write a SQL query to find the productid, name, and colour of the items 'Blade', 'Crown Race' and 'AWC Logo Cap' 
 using a derived table with multiple values.  */
 
