@@ -1,3 +1,16 @@
+/* (47) write a query in SQL to find the average number of sales orders for all the years of the sales representatives. */
+
+with totalsales_cte as
+
+(select SalesPersonID, count(SalesOrderID) totalSales
+from [AdventureWorks2019].Sales.SalesOrderHeader
+where SalesPersonID is not null
+group by SalesPersonID
+)
+
+select Avg(totalSales) as avgsales
+from totalsales_cte;
+
 /* (46) Create a SQL query to display the total number of sales orders each sales representative receives annually. 
 Sort the result set by SalesPersonID and then by the date component of the orderdate in ascending order. 
 Return the year component of the OrderDate, SalesPersonID, and SalesOrderID. */
