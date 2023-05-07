@@ -1,3 +1,10 @@
+/* (48) Write a SQL query on the following table to retrieve records with the characters green_ in the LargePhotoFileName field. 
+The following table's columns must all be returned. */
+
+Select *
+from AdventureWorks2019.Production.ProductPhoto
+where LargePhotoFileName like '%green_%';
+
 /* (47) write a query in SQL to find the average number of sales orders for all the years of the sales representatives. */
 
 with totalsales_cte as
