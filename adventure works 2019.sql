@@ -1,3 +1,13 @@
+/* (49) Write a SQL query to retrieve the mailing address for any company that is outside the United States (US) and in a city whose name 
+starts with Pa. Return Addressline1, Addressline2, city, postalcode, countryregioncode columns. */
+
+select AddressLine1, AddressLine2, City, PostalCode, CountryRegionCode
+from AdventureWorks2019.Person.Address a
+inner join AdventureWorks2019.Person.StateProvince s
+on a.StateProvinceID = s.StateProvinceID
+where CountryRegionCode <> 'US' 
+AND City like 'Pa%';
+
 /* (48) Write a SQL query on the following table to retrieve records with the characters green_ in the LargePhotoFileName field. 
 The following table's columns must all be returned. */
 
