@@ -1,3 +1,10 @@
+/* (50) From the following table write a query in SQL to fetch first twenty rows. Return jobtitle, hiredate. 
+Order the result set on hiredate column in descending order.*/
+
+select top 10 JobTitle, HireDate
+from AdventureWorks2019.HumanResources.Employee
+order by HireDate desc;
+
 /* (49) Write a SQL query to retrieve the mailing address for any company that is outside the United States (US) and in a city whose name 
 starts with Pa. Return Addressline1, Addressline2, city, postalcode, countryregioncode columns. */
 
