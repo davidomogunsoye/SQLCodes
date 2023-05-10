@@ -1,3 +1,13 @@
+/* (51)  write a SQL query to retrieve the orders with orderqtys greater than 5 or unitpricediscount less than 1000, 
+and totaldues greater than 100. Return all the columns from the tables. */
+
+Select *
+from AdventureWorks2019.sales.SalesOrderHeader so
+inner join AdventureWorks2019.Sales.SalesOrderDetail sd
+on so.SalesOrderID = sd.SalesOrderID
+where (sd.OrderQty > 5 or sd.UnitPriceDiscount < 1000)
+and so.TotalDue >100;
+
 /* (50) From the following table write a query in SQL to fetch first twenty rows. Return jobtitle, hiredate. 
 Order the result set on hiredate column in descending order.*/
 
