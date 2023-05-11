@@ -1,3 +1,9 @@
+/* (52) write a query in SQL that searches for the word 'red' in the name column. Return name, and color columns from the table. */
+
+select name, Color
+from AdventureWorks2019.Production.Product
+where name like '%red%';
+
 /* (51)  write a SQL query to retrieve the orders with orderqtys greater than 5 or unitpricediscount less than 1000, 
 and totaldues greater than 100. Return all the columns from the tables. */
 
