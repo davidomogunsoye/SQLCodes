@@ -1,3 +1,11 @@
+/* (53) write a query in SQL to find all the products with a price of $80.99 that contain the word Mountain. 
+Return name, and listprice columns from the table */
+
+Select name, ListPrice
+from AdventureWorks2019.Production.Product
+where ListPrice = 80.99
+and name like '%Mountain%';
+
 /* (52) write a query in SQL that searches for the word 'red' in the name column. Return name, and color columns from the table. */
 
 select name, Color
