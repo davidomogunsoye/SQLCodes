@@ -1,3 +1,10 @@
+/* (54) write a query in SQL to retrieve all the products that contain either the phrase Mountain or Road. 
+Return name, and color columns.  */
+
+Select name, color
+from AdventureWorks2019.Production.Product
+where name like '%Mountain%' or name like '%Road%';
+
 /* (53) write a query in SQL to find all the products with a price of $80.99 that contain the word Mountain. 
 Return name, and listprice columns from the table */
 
