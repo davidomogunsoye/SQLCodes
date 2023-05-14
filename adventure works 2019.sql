@@ -1,3 +1,10 @@
+/* (55) write a query in SQL to search for name which contains both the word 'Mountain' and the word 'Black'. 
+Return Name and color. */
+
+Select name, color
+from AdventureWorks2019.Production.Product
+where name like '%Mountain%' and name like '%Black%';
+
 /* (54) write a query in SQL to retrieve all the products that contain either the phrase Mountain or Road. 
 Return name, and color columns.  */
 
