@@ -1,3 +1,10 @@
+/* (56) write a query in SQL to return all the product names with at least one word 
+starting with the prefix chain in the Name column. */
+
+Select name, color
+from AdventureWorks2019.Production.Product
+where name like 'Chain %';
+
 /* (55) write a query in SQL to search for name which contains both the word 'Mountain' and the word 'Black'. 
 Return Name and color. */
 
