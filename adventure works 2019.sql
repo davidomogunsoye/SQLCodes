@@ -1,3 +1,9 @@
+/* (57) write a query in SQL to return all category descriptions containing strings with prefixes of either chain or full.*/
+
+Select name, color
+from AdventureWorks2019.Production.Product
+WHERE name like 'chain %' or name like 'full%';
+
 /* (56) write a query in SQL to return all the product names with at least one word 
 starting with the prefix chain in the Name column. */
 
