@@ -1,3 +1,12 @@
+/* (58)  write a SQL query to output an employee's name and email address, separated by a new line character.  */
+
+select CONCAT(p.FirstName, ' ', p.LastName) + char(13) + e.EmailAddress
+from AdventureWorks2019.Person.Person p
+inner join AdventureWorks2019.Person.EmailAddress e
+on p.BusinessEntityID = e.BusinessEntityID;
+
+--Read up on adding new line character here: https://stackoverflow.com/questions/31057/how-to-insert-a-line-break-in-a-sql-server-varchar-nvarchar-string
+
 /* (57) write a query in SQL to return all category descriptions containing strings with prefixes of either chain or full.*/
 
 Select name, color
