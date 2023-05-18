@@ -1,3 +1,9 @@
+/* (59) From the following table write a SQL query to locate the position of the string "yellow" where it appears in the product name. */
+
+select name, CHARINDEX('yellow', Name) strpos
+from AdventureWorks2019.Production.Product
+where name like '%yellow%';
+
 /* (58)  write a SQL query to output an employee's name and email address, separated by a new line character.  */
 
 select CONCAT(p.FirstName, ' ', p.LastName) + char(13) + e.EmailAddress
