@@ -1,3 +1,8 @@
+/* (60)  write a query in SQL to concatenate the name, color, and productnumber columns. */
+
+select CONCAT(name,' ','Color:',' ',color,' ','ProductName:',ProductNumber) Result, Color
+from AdventureWorks2019.Production.Product;
+
 /* (59) From the following table write a SQL query to locate the position of the string "yellow" where it appears in the product name. */
 
 select name, CHARINDEX('yellow', Name) strpos
