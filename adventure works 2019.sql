@@ -1,3 +1,10 @@
+
+/* (61) Write a SQL query that concatenate the columns name, productnumber, colour, and a new line character from the following 
+table, each separated by a specified character. */
+
+select CONCAT_ws(',',name,' ','Color:',' ',color,' ','ProductName:',ProductNumber,char(13))  info
+from AdventureWorks2019.Production.Product;
+
 /* (60)  write a query in SQL to concatenate the name, color, and productnumber columns. */
 
 select CONCAT(name,' ','Color:',' ',color,' ','ProductName:',ProductNumber) Result, Color
