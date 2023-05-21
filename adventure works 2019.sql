@@ -1,3 +1,7 @@
+/* (62) From the following table write a query in SQL to return the five leftmost characters of each product name. */
+
+select left(name,5) nameLeft
+from AdventureWorks2019.Production.Product;
 
 /* (61) Write a SQL query that concatenate the columns name, productnumber, colour, and a new line character from the following 
 table, each separated by a specified character. */
