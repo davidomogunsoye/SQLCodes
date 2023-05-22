@@ -1,3 +1,11 @@
+/* (63)  From the following table write a query in SQL to select the number of characters and the data in FirstName 
+for people located in Australia. */
+
+Select len(FirstName) length, FirstName
+from AdventureWorks2019.sales.vIndividualCustomer c
+where c.CountryRegionName = 'Australia';
+
+
 /* (62) From the following table write a query in SQL to return the five leftmost characters of each product name. */
 
 select left(name,5) nameLeft
