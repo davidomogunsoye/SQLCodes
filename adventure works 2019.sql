@@ -1,3 +1,12 @@
+/* (64) From the following tables write a query in SQL to return the number of characters in the column FirstName and 
+the first and last name of contacts located in Australia. */
+
+Select len(FirstName) length, FirstName, LastName
+from AdventureWorks2019.sales.vStoreWithContacts c
+inner join AdventureWorks2019.sales.vStoreWithAddresses a
+on c.BusinessEntityID = a.BusinessEntityID
+where a.CountryRegionName = 'Australia';
+
 /* (63)  From the following table write a query in SQL to select the number of characters and the data in FirstName 
 for people located in Australia. */
 
