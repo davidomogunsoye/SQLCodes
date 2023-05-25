@@ -1,3 +1,10 @@
+/* (65) From the following table write a query in SQL to select product names that have prices between $1000.00 and $1220.00. 
+Return product name as Lower, Upper, and also LowerUpper. */
+
+Select lower(Name) lowercase, Upper(Name) uppercase, lower(upper(Name)) lowerUppercase
+from AdventureWorks2019.Production.Product p
+where p.ListPrice between 1000 and 1220;
+
 /* (64) From the following tables write a query in SQL to return the number of characters in the column FirstName and 
 the first and last name of contacts located in Australia. */
 
