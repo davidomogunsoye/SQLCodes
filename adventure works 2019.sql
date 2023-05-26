@@ -1,3 +1,8 @@
+/* (66) Write a query in SQL to remove the spaces from the beginning of a string */
+
+Select '       remove the spaces from the beginning of a string' AS text, 
+LTRIM('       remove the spaces from the beginning of a string') as trimText;
+
 /* (65) From the following table write a query in SQL to select product names that have prices between $1000.00 and $1220.00. 
 Return product name as Lower, Upper, and also LowerUpper. */
 
