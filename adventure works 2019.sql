@@ -1,3 +1,10 @@
+/* (67) write a query in SQL to remove the substring 'HN' from the start of the column productnumber. 
+Filter the results to only show those productnumbers that start with "HN". Return original productnumber column and 'TrimmedProductnumber'. */
+
+Select ProductNumber, trim('HN' From ProductNumber) AS Trimmed
+from AdventureWorks2019.Production.Product
+WHERE ProductNumber like 'HN%';
+
 /* (66) Write a query in SQL to remove the spaces from the beginning of a string */
 
 Select '       remove the spaces from the beginning of a string' AS text, 
