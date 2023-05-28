@@ -1,3 +1,9 @@
+/* (68) From the following table write a query in SQL to repeat a 0 character four times in front of a production line for production line 'T'. */
+
+select name, concat(REPLICATE('0',4), ProductLine) as code
+from AdventureWorks2019.Production.Product
+WHERE ProductLine = 'T';
+
 /* (67) write a query in SQL to remove the substring 'HN' from the start of the column productnumber. 
 Filter the results to only show those productnumbers that start with "HN". Return original productnumber column and 'TrimmedProductnumber'. */
 
