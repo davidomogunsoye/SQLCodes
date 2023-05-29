@@ -1,3 +1,10 @@
+/* (69)  From the following table write a SQL query to retrieve all contact first names with the characters inverted for people whose 
+businessentityid is less than 6. */
+
+select firstname, reverse(firstname) reverseName
+from AdventureWorks2019.Person.person
+where BusinessEntityID < 6;
+
 /* (68) From the following table write a query in SQL to repeat a 0 character four times in front of a production line for production line 'T'. */
 
 select name, concat(REPLICATE('0',4), ProductLine) as code
