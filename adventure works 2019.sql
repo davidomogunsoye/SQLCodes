@@ -1,3 +1,10 @@
+/* (70)  From the following table write a query in SQL to return the eight rightmost characters of each name of the product. 
+Also return name, productnumber column. Sort the result set in ascending order on productnumber. */
+
+select Right(Name, 8) Lst8Lettrs, ProductNumber,name 
+from AdventureWorks2019.Production.Product
+order by ProductNumber;
+
 /* (69)  From the following table write a SQL query to retrieve all contact first names with the characters inverted for people whose 
 businessentityid is less than 6. */
 
