@@ -1,3 +1,8 @@
+/* (71) Write a query in SQL to remove the spaces at the end of a string */
+
+Select Concat('remove the spaces from the beginning of a        ' ,' string') AS text, 
+COncat(Rtrim('remove the spaces from the beginning of a        ' ),' string') as trimText;
+
 /* (70)  From the following table write a query in SQL to return the eight rightmost characters of each name of the product. 
 Also return name, productnumber column. Sort the result set in ascending order on productnumber. */
 
