@@ -1,3 +1,10 @@
+/* (72) From the following table write a query in SQL to fetch the rows for the product name ends with the letter 'S' or 'M' or 'L'. 
+Return productnumber and name. */
+
+select ProductNumber, name
+from AdventureWorks2019.Production.Product
+where right(name,1) in ('S','M','L');
+
 /* (71) Write a query in SQL to remove the spaces at the end of a string */
 
 Select Concat('remove the spaces from the beginning of a        ' ,' string') AS text, 
