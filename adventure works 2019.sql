@@ -1,3 +1,8 @@
+/* (73) From the following table write a query in SQL to replace null values with 'N/A' and return the names separated by commas in a single row. */
+
+Select string_agg(coalesce(firstname, 'N/A'),',') name
+from AdventureWorks2019.Person.Person;
+
 /* (72) From the following table write a query in SQL to fetch the rows for the product name ends with the letter 'S' or 'M' or 'L'. 
 Return productnumber and name. */
 
