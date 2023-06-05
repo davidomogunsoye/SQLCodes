@@ -1,3 +1,8 @@
+/* (74) From the following table write a query in SQL to return the names and modified date separated by commas in a single row. */
+
+Select string_agg(concat(firstname,' ',lastname, '(',modifiedDate,')'),',') name
+from AdventureWorks2019.Person.Person;
+
 /* (73) From the following table write a query in SQL to replace null values with 'N/A' and return the names separated by commas in a single row. */
 
 Select string_agg(coalesce(firstname, 'N/A'),',') name
