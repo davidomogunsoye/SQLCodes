@@ -1,3 +1,14 @@
+/* (75) From the following table write a query in SQL to find the email addresses of employees and groups them by city. Return top ten rows. */
+
+select top 10 city, string_agg(emailaddress,',')
+from AdventureWorks2019.Person.BusinessEntityAddress a
+inner join AdventureWorks2019.Person.Address p
+on p.AddressID = a.AddressID
+inner join AdventureWorks2019.Person.EmailAddress e
+on e.businessentityID = a.businessentityID
+Group by City;
+
+
 /* (74) From the following table write a query in SQL to return the names and modified date separated by commas in a single row. */
 
 Select string_agg(concat(firstname,' ',lastname, '(',modifiedDate,')'),',') name
