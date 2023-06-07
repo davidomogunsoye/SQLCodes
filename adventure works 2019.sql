@@ -1,3 +1,9 @@
+/* (76) From the following table write a query in SQL to create a new job title called "Production Assistant" in place of "Production Supervisor". */
+
+Select JobTitle, REPLACE(Jobtitle, 'Supervisor', 'Assistant') NewTitle
+from AdventureWorks2019.HumanResources.Employee
+where JobTitle like '%Production Supervisor%';
+
 /* (75) From the following table write a query in SQL to find the email addresses of employees and groups them by city. Return top ten rows. */
 
 select top 10 city, string_agg(emailaddress,',')
