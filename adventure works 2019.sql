@@ -1,3 +1,12 @@
+/* (77) From the following table write a SQL query to retrieve all the employees whose job titles begin with "Sales". 
+Return firstname, middlename, lastname and jobtitle column. */
+
+SELECT FirstName, MiddleName, LastName, JobTitle
+FROM AdventureWorks2019.Person.Person p
+Inner join [AdventureWorks2019].HumanResources.Employee e
+on p.BusinessEntityID = e.BusinessEntityID
+where JobTitle like 'Sales%';
+
 /* (76) From the following table write a query in SQL to create a new job title called "Production Assistant" in place of "Production Supervisor". */
 
 Select JobTitle, REPLACE(Jobtitle, 'Supervisor', 'Assistant') NewTitle
