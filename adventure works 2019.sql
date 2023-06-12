@@ -1,3 +1,9 @@
+/* (78) From the following table write a query in SQL to return the last name of people so that it is in uppercase, 
+trimmed, and concatenated with the first name. */
+
+Select Concat(trim(upper(LastName)), ',',' ', FirstName) fullname
+from AdventureWorks2019.Person.Person;
+
 /* (77) From the following table write a SQL query to retrieve all the employees whose job titles begin with "Sales". 
 Return firstname, middlename, lastname and jobtitle column. */
 
