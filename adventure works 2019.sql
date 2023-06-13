@@ -1,3 +1,11 @@
+/* (79) From the following table write a query in SQL to show a resulting expression that is too small to display. 
+Return FirstName, LastName, Title, and SickLeaveHours. The SickLeaveHours will be shown as a small expression in text format. */
+
+Select FirstName, LastName, Title, cast(SickLeaveHours as char (1)) sickleave
+from [AdventureWorks2019].HumanResources.Employee B
+inner join AdventureWorks2019.Person.Person p
+on b.BusinessEntityID = p.BusinessEntityID;
+
 /* (78) From the following table write a query in SQL to return the last name of people so that it is in uppercase, 
 trimmed, and concatenated with the first name. */
 
