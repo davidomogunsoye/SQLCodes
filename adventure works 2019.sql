@@ -1,3 +1,10 @@
+/* (80) From the following table write a query in SQL to retrieve the name of the products. 
+Product, that have 33 as the first two digits of listprice. */
+
+select name, ListPrice
+from AdventureWorks2019.Production.Product
+where ListPrice like '33%';
+
 /* (79) From the following table write a query in SQL to show a resulting expression that is too small to display. 
 Return FirstName, LastName, Title, and SickLeaveHours. The SickLeaveHours will be shown as a small expression in text format. */
 
