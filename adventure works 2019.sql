@@ -1,3 +1,10 @@
+/* (81) From the following table write a query in SQL to calculate by dividing the total year-to-date sales (SalesYTD) 
+by the commission percentage (CommissionPCT). Return SalesYTD, CommissionPCT, and the value rounded to the nearest whole number. */
+
+Select SalesYTD, CommissionPct, (SalesYTD / nullif(CommissionPct,0)) commission
+from AdventureWorks2019.Sales.SalesPerson
+where CommissionPct <> 0;
+
 /* (80) From the following table write a query in SQL to retrieve the name of the products. 
 Product, that have 33 as the first two digits of listprice. */
 
