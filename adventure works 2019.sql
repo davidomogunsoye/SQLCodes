@@ -1,3 +1,12 @@
+/* (82) From the following table write a query in SQL to find those persons that have a 2 in the first digit of their SalesYTD. 
+Convert the SalesYTD column to an int type, and then to a char(20) type. Return FirstName, LastName, SalesYTD, and BusinessEntityID. */
+
+select FirstName, LastName, cast(cast( SalesYTD as int) as char (20)) salesYTD, s.BusinessEntityID 
+from [AdventureWorks2019].person.person p
+inner join [AdventureWorks2019].sales.salesperson s
+on p.BusinessEntityID = s.BusinessEntityID
+where SalesYTD like '2%';
+
 /* (81) From the following table write a query in SQL to calculate by dividing the total year-to-date sales (SalesYTD) 
 by the commission percentage (CommissionPCT). Return SalesYTD, CommissionPCT, and the value rounded to the nearest whole number. */
 
