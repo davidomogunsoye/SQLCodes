@@ -1,3 +1,11 @@
+/* (83) From the following table write a query in SQL to convert the Name column to a char(16) column. 
+Convert those rows if the name starts with 'Long-Sleeve Logo Jersey'. 
+Return name of the product and listprice. */
+
+Select CAST(name AS char(16)) name, ListPrice
+from AdventureWorks2019.Production.Product
+where name like 'Long-Sleeve Logo Jersey%';
+
 /* (82) From the following table write a query in SQL to find those persons that have a 2 in the first digit of their SalesYTD. 
 Convert the SalesYTD column to an int type, and then to a char(20) type. Return FirstName, LastName, SalesYTD, and BusinessEntityID. */
 
