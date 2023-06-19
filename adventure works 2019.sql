@@ -1,3 +1,11 @@
+/* (84) From the following table write a SQL query to determine the discount price for the salesorderid 46672. 
+Calculate only those orders with discounts of more than.02 percent. Return productid, UnitPrice, UnitPriceDiscount, 
+and DiscountPrice (UnitPrice*UnitPriceDiscount ). */
+
+select ProductID, UnitPrice, UnitPriceDiscount, (UnitPrice*UnitPriceDiscount ) discountPrice
+from AdventureWorks2019.sales.SalesOrderDetail
+where SalesOrderID = 46672 and UnitPriceDiscount > 0.02;
+
 /* (83) From the following table write a query in SQL to convert the Name column to a char(16) column. 
 Convert those rows if the name starts with 'Long-Sleeve Logo Jersey'. 
 Return name of the product and listprice. */
