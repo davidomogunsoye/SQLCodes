@@ -1,3 +1,10 @@
+/* (85) From the following table write a query in SQL to calculate the average vacation hours, and the sum of sick leave hours, 
+that the vice presidents have used. */
+
+select AVG(VacationHours) AvgVacHrs, SUM(SickLeaveHours) TotalSickLeave
+from AdventureWorks2019.HumanResources.Employee
+WHERE JobTitle LIKE 'Vice President%';
+
 /* (84) From the following table write a SQL query to determine the discount price for the salesorderid 46672. 
 Calculate only those orders with discounts of more than.02 percent. Return productid, UnitPrice, UnitPriceDiscount, 
 and DiscountPrice (UnitPrice*UnitPriceDiscount ). */
