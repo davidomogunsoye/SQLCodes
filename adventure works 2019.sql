@@ -1,3 +1,10 @@
+/* (86) From the following table write a query in SQL to calculate the average bonus received and the sum of year-to-date sales for each territory. 
+Return territoryid, Average bonus, and YTD sales. */
+
+Select TerritoryID, AVG(Bonus) AvgBonus, SUM(SalesYTD) TotalSalesYTD
+from AdventureWorks2019.Sales.SalesPerson
+Group by TerritoryID;
+
 /* (85) From the following table write a query in SQL to calculate the average vacation hours, and the sum of sick leave hours, 
 that the vice presidents have used. */
 
