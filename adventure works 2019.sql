@@ -1,3 +1,9 @@
+/* (87) From the following table write a query in SQL to return the average list price of products. 
+Consider the calculation only on unique values. */
+
+SELECT AVG(Distinct(ListPrice))
+FROM AdventureWorks2019.Production.Product;
+
 /* (86) From the following table write a query in SQL to calculate the average bonus received and the sum of year-to-date sales for each territory. 
 Return territoryid, Average bonus, and YTD sales. */
 
