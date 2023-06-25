@@ -1,3 +1,13 @@
+/* (88) From the following table write a query in SQL to return a moving average of yearly sales for each territory. 
+Return BusinessEntityID, TerritoryID, SalesYear, SalesYTD, average SalesYTD as MovingAvg, and total SalesYTD as CumulativeTotal */
+
+select BusinessEntityID, TerritoryID, DATEPART(year, modifieddate) salesYear, SalesYTD, 
+AVG(SalesYTD) OVER (PARTITION BY TerritoryID ORDER BY DATEpART(year,ModifiedDate)) movingAvg, 
+Sum(SalesYTD)  OVER (PARTITION BY TerritoryID ORDER BY DATEPART(year,ModifiedDate)) cumulativeTotal
+from  AdventureWorks2019.Sales.SalesPerson
+where TerritoryID is not null 
+order by TerritoryID, salesYear;
+
 /* (87) From the following table write a query in SQL to return the average list price of products. 
 Consider the calculation only on unique values. */
 
