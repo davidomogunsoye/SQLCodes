@@ -1,3 +1,12 @@
+/* (89) From the following table write a query in SQL to return a moving average of sales, by year, for all sales territories. 
+Return BusinessEntityID, TerritoryID, SalesYear, SalesYTD, average SalesYTD as MovingAvg, and total SalesYTD as CumulativeTotal. */
+
+select BusinessEntityID, TerritoryID, DATEPART(year, modifieddate) salesYear, SalesYTD, 
+AVG(SalesYTD) OVER (PARTITION BY TerritoryID ORDER BY DATEpART(year,ModifiedDate)) movingAvg, 
+Sum(SalesYTD)  OVER (PARTITION BY TerritoryID ORDER BY DATEPART(year,ModifiedDate)) cumulativeTotal
+from  AdventureWorks2019.Sales.SalesPerson 
+order by BusinessEntityID, TerritoryID, salesYear;
+
 /* (88) From the following table write a query in SQL to return a moving average of yearly sales for each territory. 
 Return BusinessEntityID, TerritoryID, SalesYear, SalesYTD, average SalesYTD as MovingAvg, and total SalesYTD as CumulativeTotal */
 
