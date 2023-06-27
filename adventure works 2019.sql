@@ -1,3 +1,8 @@
+/* (90) From the following table write a query in SQL to return the number of different titles that employees can hold. */
+
+Select count(distinct(Jobtitle)) No_Of_Job_Titles
+from AdventureWorks2019.HumanResources.Employee;
+
 /* (89) From the following table write a query in SQL to return a moving average of sales, by year, for all sales territories. 
 Return BusinessEntityID, TerritoryID, SalesYear, SalesYTD, average SalesYTD as MovingAvg, and total SalesYTD as CumulativeTotal. */
 
