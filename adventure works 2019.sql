@@ -1,3 +1,8 @@
+/* (91) From the following table write a query in SQL to find the total number of employees. */
+
+Select count(BusinessEntityID) 'No of Employees'
+from AdventureWorks2019.HumanResources.Employee;
+
 /* (90) From the following table write a query in SQL to return the number of different titles that employees can hold. */
 
 Select count(distinct(Jobtitle)) No_Of_Job_Titles
