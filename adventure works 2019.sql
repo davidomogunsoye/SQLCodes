@@ -1,3 +1,10 @@
+/* (92) From the following table write a query in SQL to find the average bonus for the salespersons who achieved the sales quota above 25000. 
+Return number of salespersons, and average bonus. */
+
+select count(BusinessEntityID) 'No of Sales Person', AVG(Bonus) 'Average Bonus'
+from [AdventureWorks2019].sales.salesperson
+WHERE SalesQuota > 25000;
+
 /* (91) From the following table write a query in SQL to find the total number of employees. */
 
 Select count(BusinessEntityID) 'No of Employees'
