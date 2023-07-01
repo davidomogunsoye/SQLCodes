@@ -1,3 +1,14 @@
+/* (94) From the following tables write a SQL query to return the departments of a company that each have more than 15 employees. */
+
+select d.Name, Count(p.bUSINESSeNTITYid) 'No of Emp'
+from [AdventureWorks2019].HumanResources.EmployeePayHistory P 
+inner join [AdventureWorks2019].HumanResources.EmployeeDepartmentHistory H
+on p.BusinessEntityID = h.BusinessEntityID
+Inner Join AdventureWorks2019.HumanResources.Department D
+on d.DepartmentID = h.DepartmentID
+Group by d.Name
+having Count(p.bUSINESSeNTITYid) > 15;
+
 /* (93) From the following tables write a query in SQL to return aggregated values for each department. 
 Return name, minimum salary, maximum salary, average salary, and number of employees in each department. */
 
