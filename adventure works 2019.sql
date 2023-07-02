@@ -1,3 +1,10 @@
+/* (95) From the following table write a query in SQL to find the number of products that were ordered in each of the specified sales orders. */
+
+Select distinct(SalesOrderID), count(ProductID) 'Prod Count'
+from AdventureWorks2019.Sales.SalesOrderDetail
+Group by SalesOrderID
+order by count(ProductID) desc;
+
 /* (94) From the following tables write a SQL query to return the departments of a company that each have more than 15 employees. */
 
 select d.Name, Count(p.bUSINESSeNTITYid) 'No of Emp'
