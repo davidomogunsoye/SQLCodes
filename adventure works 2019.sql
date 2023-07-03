@@ -1,3 +1,15 @@
+/* (96) From the following table write a query in SQL to compute the statistical variance of the sales quota values for each quarter 
+in a calendar year for a sales person. Return year, quarter, salesquota and variance of salesquota. */
+
+Select businessentityID, datepart(year, QuotaDate) year, 
+datepart(Quarter, QuotaDate) Quarter, 
+SalesQuota, 
+Var(SalesQuota) 
+	over (order by datepart(year, QuotaDate), 
+	datepart(Quarter, QuotaDate) ) Variance
+from AdventureWorks2019.sales.SalesPersonQuotaHistory
+ORDER BY BusinessEntityID, datepart(year, QuotaDate), datepart(Quarter, QuotaDate);
+
 /* (95) From the following table write a query in SQL to find the number of products that were ordered in each of the specified sales orders. */
 
 Select distinct(SalesOrderID), count(ProductID) 'Prod Count'
