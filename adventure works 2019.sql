@@ -1,3 +1,9 @@
+/* (97) From the following table write a query in SQL to populate the variance of all unique values as well as all values, 
+including any duplicates values of SalesQuota column. */
+
+Select var(distinct SalesQuota) 'Distinct Var', var(salesquota) 'All Var'
+from AdventureWorks2019.Sales.SalesPersonQuotaHistory;
+
 /* (96) From the following table write a query in SQL to compute the statistical variance of the sales quota values for each quarter 
 in a calendar year for a sales person. Return year, quarter, salesquota and variance of salesquota. */
 
