@@ -1,3 +1,12 @@
+/* (98) From the following table write a query in SQL to return the total ListPrice and StandardCost of products for each color. 
+Products that name starts with 'Mountain' and ListPrice is more than zero. Return Color, total list price, total standardcode. 
+Sort the result set on color in ascending order. */
+
+Select distinct(Color), sum(listPrice) 'Total ListPrice', sum(standardcost) 'Total Standard cost'
+from AdventureWorks2019.Production.Product
+where name like 'Mountain%' and ListPrice > 0
+Group by Color;
+
 /* (97) From the following table write a query in SQL to populate the variance of all unique values as well as all values, 
 including any duplicates values of SalesQuota column. */
 
