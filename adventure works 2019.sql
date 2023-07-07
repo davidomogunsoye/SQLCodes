@@ -862,8 +862,7 @@ Sort the result set on color in ascending order. */
 SELECT distinct a.Color, sum(a.ListPrice) total_list_price, sum(a.standardCost) total_standard_cost
   FROM [AdventureWorks2019].[Production].[Product] a
   where a.name like 'Mountain%' 
-  and 
-  a.ListPrice > 0
+  and a.ListPrice > 0
   Group by a.color
   order by a.Color;
   
