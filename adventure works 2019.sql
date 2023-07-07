@@ -1,3 +1,10 @@
+/* (99) From the following table write a query in SQL to find the TotalSalesYTD of each SalesQuota. 
+Show the summary of the TotalSalesYTD amounts for all SalesQuota groups. Return SalesQuota and TotalSalesYTD. */
+
+Select SalesQuota, sum(salesYTD) 'Total Sales'
+from AdventureWorks2019.Sales.SalesPerson
+Group by SalesQuota;
+
 /* (98) From the following table write a query in SQL to return the total ListPrice and StandardCost of products for each color. 
 Products that name starts with 'Mountain' and ListPrice is more than zero. Return Color, total list price, total standardcode. 
 Sort the result set on color in ascending order. */
