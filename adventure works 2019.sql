@@ -1,3 +1,10 @@
+/* (100)  From the following table write a query in SQL to calculate the sum of the ListPrice and StandardCost for each color. 
+Return color, sum of ListPrice. */
+
+select color, SUM(ListPrice) TotalPrice, SUM(StandardCost) TotalCost
+from AdventureWorks2019.Production.Product
+group by Color;
+
 /* (99) From the following table write a query in SQL to find the TotalSalesYTD of each SalesQuota. 
 Show the summary of the TotalSalesYTD amounts for all SalesQuota groups. Return SalesQuota and TotalSalesYTD. */
 
